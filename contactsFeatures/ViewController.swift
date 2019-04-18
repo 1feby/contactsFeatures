@@ -10,6 +10,9 @@ import UIKit
 import Contacts
 import EventKit
 class ViewController: UIViewController {
+   
+    lazy var evet : EKEvent = EKEvent(eventStore: eventStore);
+    var events: [EKEvent]?
     var filterdItemsArray = [CONTACTS]()
     var fetcontacts : [CONTACTS] = []
     var contactdic : [String] = []
@@ -156,6 +159,52 @@ class ViewController: UIViewController {
                     print("no")
                 }
             }
+        }
+    }
+    
+    @IBAction func Add_event(_ sender: UIButton) {
+        eventStore.requestAccess(to: .event) { (granted, error) in
+            if (granted) && (error == nil ){
+                print("granted\(granted)")
+                
+                self.evet.title = "Add event lololololoy"
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy/MM/dd HH:mm"
+                let startDateTime = formatter.date(from: "2019/03/15 05:00");
+                self.evet.startDate = startDateTime
+                let endDateTime = formatter.date(from: "2019/03/16 05:35");
+                self.evet.endDate = endDateTime
+                // let alaram = EKAlarm(relativeOffset: 0)
+                //  evet.alarms = [alaram]
+                self.evet.addAlarm(.init(relativeOffset: -5*60))
+                self.evet.notes = "This is note"
+                self.evet.calendar = self.eventStore.defaultCalendarForNewEvents
+                do{
+                    try self.eventStore.save(self.evet, span: .thisEvent)
+                }catch let error as NSError{
+                    let alert = UIAlertController(title: "Event could not save", message: (error as NSError).localizedDescription, preferredStyle: .alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alert.addAction(OKAction)
+                    
+                    self.present(alert, animated: true, completion: nil)
+                }
+                print("Save Event")
+            }else{
+                print ("error is \(error)")
+            }
+        }
+    }
+    @IBAction func Remove_event(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+        self.calendars = eventStore.calendars(for: EKEntityType.event)
+        // Create start and end date NSDate instances to build a predicate for which events to select
+        let startDate = dateFormatter.date(from: "2019/03/15 04:00")
+        let endDate = dateFormatter.date(from: "2019/03/17 20:00")
+        let prediacte = eventStore.predicateForEvents(withStart: startDate!, end: endDate!, calendars: calendars!)
+        self.events = eventStore.events(matching: prediacte)
+        for i in events! {
+            deleteEntry(event: i)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

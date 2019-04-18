@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		511B039E225F585C00D95719 /* smsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511B039D225F585C00D95719 /* smsTableView.swift */; };
 		516C877E2268A9DE004387EB /* ReminderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516C877D2268A9DD004387EB /* ReminderTableView.swift */; };
+		516C87802268B898004387EB /* calendarTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516C877F2268B898004387EB /* calendarTableView.swift */; };
 		51D758652247BEB200EDD8A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D758642247BEB200EDD8A7 /* AppDelegate.swift */; };
 		51D758672247BEB200EDD8A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D758662247BEB200EDD8A7 /* ViewController.swift */; };
 		51D7586A2247BEB200EDD8A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D758682247BEB200EDD8A7 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		511B039D225F585C00D95719 /* smsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smsTableView.swift; sourceTree = "<group>"; };
 		516C877D2268A9DD004387EB /* ReminderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableView.swift; sourceTree = "<group>"; };
+		516C877F2268B898004387EB /* calendarTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarTableView.swift; sourceTree = "<group>"; };
 		51D758612247BEB100EDD8A7 /* contactsFeatures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = contactsFeatures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D758642247BEB200EDD8A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51D758662247BEB200EDD8A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				51D758642247BEB200EDD8A7 /* AppDelegate.swift */,
 				51D758662247BEB200EDD8A7 /* ViewController.swift */,
+				516C877F2268B898004387EB /* calendarTableView.swift */,
 				51D7587C2247D5C200EDD8A7 /* callTableView.swift */,
 				51D7587A2247D02500EDD8A7 /* contacts.swift */,
 				51D758682247BEB200EDD8A7 /* Main.storyboard */,
@@ -150,6 +153,7 @@
 				51D758672247BEB200EDD8A7 /* ViewController.swift in Sources */,
 				51D7587D2247D5C200EDD8A7 /* callTableView.swift in Sources */,
 				51D7587B2247D02500EDD8A7 /* contacts.swift in Sources */,
+				516C87802268B898004387EB /* calendarTableView.swift in Sources */,
 				511B039E225F585C00D95719 /* smsTableView.swift in Sources */,
 				51D758652247BEB200EDD8A7 /* AppDelegate.swift in Sources */,
 				516C877E2268A9DE004387EB /* ReminderTableView.swift in Sources */,
